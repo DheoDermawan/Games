@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu Utama Pandora</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
+</head>
+
+<body class="bg-gradient-to-r from-blue-200 via-teal-300 to-green-200 min-h-screen flex flex-col items-center justify-start py-12 px-4">
+
+  <!-- Header -->
+  <div class="flex flex-col items-center sm:flex-row sm:items-center sm:justify-between bg-teal-600 rounded-full px-6 py-3 shadow-lg w-full max-w-3xl mt-6">
+    <h1 class="text-white font-extrabold text-2xl text-center sm:text-3xl sm:mr-6">MENU UTAMA PANDORA</h1>
+    <input type="text" id="searchInput" class="ml-4 text-black placeholder-gray-500 bg-white px-4 py-2 rounded-md text-sm shadow-lg focus:outline-none focus:ring-2 focus:ring-teal-500 mt-4 sm:mt-0 sm:max-w-xs w-full" placeholder="Cari..." />
+  </div>
+
+  <!-- Area Cards -->
+  <div class="mt-12 w-full max-w-3xl">
+    <div class="space-y-12 sm:space-y-8">
+      <!-- Area Buta -->
+      <div id="area-buta" class="relative flex flex-col sm:flex-row items-center justify-center">
+        <div class="absolute sm:-left-12">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" class="w-10 h-10 transform rotate-45">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+          </svg>
+        </div>
+        <div class="bg-teal-500 rounded-lg w-full p-8 relative shadow-lg hover:shadow-2xl transition duration-300">
+          <a href="areabuta.html" class="block">
+            <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-red-400 px-6 py-2 rounded-t-lg">
+              <p class="text-white font-bold text-sm uppercase">AREA BUTA</p>
+            </div>
+            <p class="text-white text-xl font-semibold text-center mt-8">Informasi tentang Area Buta</p>
+          </a>
+        </div>
+      </div>
+
+      <!-- Area Tersembunyi -->
+      <div id="area-tersembunyi" class="relative flex flex-col sm:flex-row items-center justify-center">
+        <div class="absolute sm:-left-12">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" class="w-10 h-10 transform rotate-45">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+          </svg>
+        </div>
+        <div class="bg-teal-500 rounded-lg w-full p-8 relative shadow-lg hover:shadow-2xl transition duration-300">
+          <a href="areatersembunyi.html" class="block">
+            <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-red-400 px-6 py-2 rounded-t-lg">
+              <p class="text-white font-bold text-sm uppercase">AREA TERSEMBUNYI</p>
+            </div>
+            <p class="text-white text-xl font-semibold text-center mt-8">Informasi tentang Area Tersembunyi</p>
+          </a>
+        </div>
+      </div>
+
+      <!-- Area Terbuka -->
+      <div id="area-terbuka" class="relative flex flex-col sm:flex-row items-center justify-center">
+        <div class="absolute sm:-left-12">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" class="w-10 h-10 transform rotate-45">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+          </svg>
+        </div>
+        <div class="bg-teal-500 rounded-lg w-full p-8 relative shadow-lg hover:shadow-2xl transition duration-300">
+          <a href="areaterbuka.html" class="block">
+            <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-red-400 px-6 py-2 rounded-t-lg">
+              <p class="text-white font-bold text-sm uppercase">AREA TERBUKA</p>
+            </div>
+            <p class="text-white text-xl font-semibold text-center mt-8">Informasi tentang Area Terbuka</p>
+          </a>
+        </div>
+      </div>
+
+      <!-- Area Misteri -->
+      <div id="area-misteri" class="relative flex flex-col sm:flex-row items-center justify-center">
+        <div class="absolute sm:-left-12">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" class="w-10 h-10 transform rotate-45">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+          </svg>
+        </div>
+        <div class="bg-teal-500 rounded-lg w-full p-8 relative shadow-lg hover:shadow-2xl transition duration-300">
+          <a href="areamisteri.html" class="block">
+            <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-red-400 px-6 py-2 rounded-t-lg">
+              <p class="text-white font-bold text-sm uppercase">AREA MISTERI</p>
+            </div>
+            <p class="text-white text-xl font-semibold text-center mt-8">Informasi tentang Area Misteri</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tombol Back to Menu -->
+  <div class="mt-8">
+    <a href="index.html" class="bg-teal-600 text-white px-8 py-3 rounded-full shadow-lg hover:bg-teal-700 transition duration-300">
+      Back to Menu
+    </a>
+  </div>
+
+  <!-- Ilustrasi Wanita -->
+  <div class="absolute bottom-8 right-8">
+    <img src="https://cdn-icons-png.flaticon.com/512/3667/3667303.png" alt="Ilustrasi Wanita" class="w-24 sm:w-20">
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    const searchInput = document.getElementById("searchInput");
+
+    searchInput.addEventListener("input", function () {
+      const query = searchInput.value.toLowerCase();
+      const areas = ["area-buta", "area-tersembunyi", "area-terbuka", "area-misteri"];
+
+      areas.forEach(id => {
+        const area = document.getElementById(id);
+        const text = area.querySelector("p").textContent.toLowerCase();
+        if (text.includes(query) || query === "") {
+          area.style.display = "flex";
+        } else {
+          area.style.display = "none";
+        }
+      });
+    });
+  </script>
+
+  <iframe src="audio-player.html" style="display:none;" id="audio-player"></iframe>
+</body>
+
+</html>

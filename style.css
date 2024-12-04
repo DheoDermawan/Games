@@ -1,0 +1,225 @@
+* {
+	box-sizing: border-box;
+  }
+  
+  body {
+	margin: 0;
+	padding: 0;
+	background-color: #34495e;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	color: #fff;
+	font-family: Arial, sans-serif;
+  }
+  
+  .setup {
+	text-align: center;
+	margin-bottom: 20px;
+  }
+  
+  .setup input {
+	width: 300px;
+	padding: 10px;
+	margin-top: 10px;
+	border: none;
+	border-radius: 5px;
+  }
+  
+  .setup button {
+	margin-top: 10px;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	background-color: #2ecc71;
+	color: white;
+	font-weight: bold;
+	cursor: pointer;
+  }
+  
+  .setup button:hover {
+	background-color: #27ae60;
+  }
+  
+  .wheel-container {
+	position: relative;
+	width: 500px;
+	height: 500px;
+  }
+  
+  .container {
+	width: 100%;
+	height: 100%;
+	background-color: #ccc;
+	border-radius: 50%;
+	border: 15px solid #dde;
+	position: absolute;
+	overflow: hidden;
+	transition: 5s;
+  }
+  
+  .container div {
+	height: 50%;
+	width: 200px;
+	position: absolute;
+	clip-path: polygon(100% 0, 50% 100%, 0 0);
+	transform: translateX(-50%);
+	transform-origin: bottom;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 20px;
+	font-weight: bold;
+	font-family: sans-serif;
+	color: #fff;
+	left: 135px;
+  }
+  
+  .pointer {
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-left: 15px solid transparent;
+	border-right: 15px solid transparent;
+	border-bottom: 40px solid #fff; /* White color for the pointer */
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -100%) rotate(-30deg); /* Adjusted rotation to point more to the left */
+	border-bottom-left-radius: 20px;  /* Rounded bottom left corner */
+	border-bottom-right-radius: 20px; /* Rounded bottom right corner */
+	z-index: 10;
+	transition: all 0.3s ease; /* Smooth animation for pointer movement */
+  }
+  
+  
+  
+  
+  
+  .controls {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	margin-top: 20px;
+  }
+  
+  #truth, #dare {
+	padding: 10px 20px;
+	background-color: #e67e22;
+	color: white;
+	border: none;
+	font-weight: bold;
+	font-size: 18px;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: 0.3s;
+  }
+  
+  #truth:hover, #dare:hover {
+	background-color: #d35400;
+  }
+  
+  #or-text {
+	font-size: 18px;
+	font-weight: bold;
+	color: #fff;
+  }
+  
+  .spin-controls {
+	margin-top: 20px;
+  }
+  
+  #spin {
+	padding: 10px 30px;
+	background-color: #27ae60;
+	color: white;
+	font-weight: bold;
+	font-size: 20px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: 0.3s;
+  }
+  
+  #spin:hover {
+	background-color: #1e8449;
+  }
+  
+  #result-text {
+	margin-top: 20px;
+	font-size: 18px;
+	font-weight: bold;
+  }
+  
+  .elimination-controls {
+	margin-top: 20px;
+  }
+  
+  #eliminate {
+	padding: 10px 20px;
+	background-color: #e74c3c;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: 0.3s;
+  }
+  
+  #eliminate:hover {
+	background-color: #c0392b;
+  }
+  
+/* Menampilkan tombol Reset dan Back to Menu di samping dengan jarak jauh */
+.reset-controls {
+	margin-top: 20px;
+	display: flex;
+	justify-content: space-between;  /* Menyusun tombol di ujung kiri dan kanan */
+	width: 100%;  /* Menggunakan lebar penuh untuk memaksimalkan jarak antar tombol */
+  }
+  
+  /* Styling untuk tombol Reset */
+  #reset {
+	padding: 10px 20px;
+	background-color: #3498db;  /* Warna biru */
+	color: white;
+	border: none;
+	border-radius: 5px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: 0.3s;
+  }
+  
+  /* Styling saat hover pada tombol Reset */
+  #reset:hover {
+	background-color: #2980b9;  /* Warna biru lebih gelap saat hover */
+  }
+
+  /* Menampilkan tombol Reset dan Back to Menu di samping dengan jarak jauh */
+.reset-controls {
+	margin-top: 20px;
+	display: flex;
+	justify-content: space-between;  /* Menyusun tombol di ujung kiri dan kanan */
+	width: 100%;  /* Menggunakan lebar penuh untuk memaksimalkan jarak antar tombol */
+  }
+
+  /* Styling untuk tombol Back to Menu */
+#back-to-menu {
+	padding: 10px 30px;
+	background-color: #b94326;  /* Warna hijau seperti tombol Spin */
+	color: white;
+	font-weight: bold;
+	font-size: 20px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: 0.3s;
+  }
+  
+  /* Styling saat hover pada tombol Back to Menu */
+  #back-to-menu:hover {
+	background-color: #1e8449;  /* Warna hijau lebih gelap saat hover */
+  }

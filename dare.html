@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="dare.css">
+  <title>Dare Game</title>
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">Dare</h1>
+    <p class="instruction">Pilihlah salah satu kartu!!</p>
+    <div class="card-container">
+      <div class="card" data-question="Berikan 1 kalimat motivasi untuk teman yang berada di samping kirimu (area buta)">
+        <div class="card-icon">
+          <img src="icon-removebg-preview.png" alt="Mood Icon">
+        </div>
+        <div class="card-content">Klik untuk Membuka</div>
+      </div>
+      <div class="card" data-question="Tunjukkan sesuatu yang jadi kebanggaanmu dan dikenal semua orang disini (area terbuka)">
+        <div class="card-icon">
+          <img src="icon-removebg-preview.png" alt="Dream Icon">
+        </div>
+        <div class="card-content">Klik untuk Membuka</div>
+      </div>
+      <div class="card" data-question="Pilihlah satu orang untuk bertanya kepadamu pertanyaan apa saja dan jawab jujur (area tersembunyi)">
+        <div class="card-icon">
+          <img src="icon-removebg-preview.png" alt="Comment Icon">
+        </div>
+        <div class="card-content">Klik untuk Membuka</div>
+      </div>
+      <div class="card" data-question="Tirukan gaya bicara atau tingkah laku unik teman yang berada di sebelah kananmi (area terbuka)">
+        <div class="card-icon">
+          <img src="icon-removebg-preview.png" alt="Habit Icon">
+        </div>
+        <div class="card-content">Klik untuk Membuka</div>
+      </div>
+      <div class="card" data-question="perlihatkan ekspresi aslimu saat menghadapi sesuatu yang membuatmu kesal, walaupun selama ini kamu menyembunyikannya (area tersembunyi)">
+        <div class="card-icon">
+          <img src="icon-removebg-preview.png" alt="Strengths Icon">
+        </div>
+        <div class="card-content">Klik untuk Membuka</div>
+      </div>
+      <div class="card" data-question="Sebutkan satu ciri khas yang temanmu miliki secara bergantian (area terbuka)">
+        <div class="card-icon">
+          <img src="icon-removebg-preview.png" alt="Self Icon">
+        </div>
+        <div class="card-content">Klik untuk Membuka</div>
+      </div>
+    </div>
+    <button id="back-btn" class="back-btn">Back</button>
+  </div>
+
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <p id="question-text"></p>
+      <button id="close-btn">Tutup</button>
+    </div>
+  </div>
+
+  <script src="dare.js"></script>
+
+  <iframe src="audio-player.html" style="display:none;" id="audio-player"></iframe>
+</body>
+</html>

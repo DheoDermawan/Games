@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Spin Wheel Game</title>
+</head>
+<body>
+
+  <div class="setup">
+    <h1>Spin Wheel Game</h1>
+    <label for="names">Masukkan Nama (Pakai comma):</label><br>
+    <input type="text" id="names" placeholder="Contoh: Delia, Alya, Putri, Sayyi, Eti, Zahra"><br>
+    <button id="start">Create Wheel</button>
+  </div>
+
+  <div class="game" style="display:none;">
+    <div class="wheel-container">
+      <div class="pointer"></div>
+      <div class="container"></div>
+    </div>
+    <div class="controls">
+      <button id="truth">Truth</button>
+      <span id="or-text">OR</span>
+      <button id="dare">Dare</button>
+    </div>
+    <div class="spin-controls">
+      <button id="spin">Spin</button>
+    </div>
+    <p id="result-text">Result: <span>-</span></p>
+    <div class="elimination-controls">
+      <button id="eliminate" style="display: none;">Eliminate</button>
+    </div>
+    <div class="reset-controls">
+      <button id="reset">Reset Game</button>
+    </div>
+    <div class="reset-controls">
+  <button id="back-to-menu">Back to Menu</button>
+</div>
+<iframe src="audio-player.html" style="display:none;" id="audio-player"></iframe> 
+  <script src="main.js"></script>
+</body>
+</html>

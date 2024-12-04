@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pandora</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Roboto:wght@400;700&display=swap');
+    body {
+      font-family: 'Fredoka One', cursive;
+    }
+    h1, h2 {
+      font-family: 'Fredoka One', cursive;
+    }
+    p, a {
+      font-family: 'Roboto', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-blue-200 via-purple-300 to-pink-300 flex flex-col items-center justify-between min-h-screen text-gray-800">
+
+  <!-- Tombol Musik -->
+  <div class="flex justify-end w-full px-6 pt-6">
+    <div id="music-button" class="bg-white rounded-full shadow-md p-4 text-center cursor-pointer hover:scale-110 transition-transform">
+      <i id="music-icon" class="fas fa-volume-mute text-2xl text-purple-600"></i>
+      <p class="mt-2 text-sm font-bold text-purple-600">MUSIK</p>
+    </div>
+  </div>
+
+  <!-- Gambar Utama -->
+  <div class="mt-8">
+    <img alt="Illustration of happy children" class="mx-auto drop-shadow-lg rounded-lg" 
+      src="https://storage.googleapis.com/a1aa/image/1GkS2tfuYTz0cKEDB2dyJkmnhP2VYzJtw6n8AWvTebAQ4UvTA.jpg" 
+      width="320" />
+  </div>
+
+  <!-- Welcome Section -->
+  <div class="bg-white rounded-lg shadow-xl p-8 mt-6 text-center max-w-md">
+    <h1 class="text-4xl text-purple-600">WELCOME TO</h1>
+    <h2 class="text-2xl mt-2 text-gray-800">PANDORA</h2>
+  </div>
+
+  <!-- Menu -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10 w-full max-w-4xl px-6">
+    <!-- Menu Items -->
+    <a href="petunjuk.html" class="bg-white rounded-lg shadow-lg p-6 text-center hover:scale-105 transition-transform">
+      <i class="fas fa-question text-4xl text-blue-500"></i>
+      <p class="mt-4 text-lg font-semibold text-gray-700">PETUNJUK</p>
+    </a>
+    <a href="menuutama.html" class="bg-white rounded-lg shadow-lg p-6 text-center hover:scale-105 transition-transform">
+      <i class="fas fa-play text-4xl text-green-500"></i>
+      <p class="mt-4 text-lg font-semibold text-gray-700">MULAI</p>
+    </a>
+    <a href="informasi.html" class="bg-white rounded-lg shadow-lg p-6 text-center hover:scale-105 transition-transform">
+      <i class="fas fa-info text-4xl text-yellow-500"></i>
+      <p class="mt-4 text-lg font-semibold text-gray-700">INFORMASI</p>
+    </a>
+    <a href="game.html" class="bg-white rounded-lg shadow-lg p-6 text-center hover:scale-105 transition-transform">
+      <i class="fas fa-gamepad text-4xl text-purple-500"></i>
+      <p class="mt-4 text-lg font-semibold text-gray-700">GAME</p>
+    </a>
+    <a href="saran.html" class="bg-white rounded-lg shadow-lg p-6 text-center hover:scale-105 transition-transform">
+      <i class="fas fa-heart text-4xl text-pink-500"></i>
+      <p class="mt-4 text-lg font-semibold text-gray-700">SARAN</p>
+    </a>
+  </div>
+
+  <!-- Hak Cipta -->
+  <footer class="mt-12 mb-6 text-center text-sm text-gray-700">
+    <p class="bg-white rounded-full shadow-lg py-2 px-4 inline-block text-gray-600 font-bold">
+      &copy; 2024 <strong>Pandora</strong> 
+    </p>
+  </footer>
+
+  <!-- Iframe untuk Audio -->
+  <iframe src="audio-player.html" style="display:none;" id="audio-player"></iframe> 
+
+  <!-- Script -->
+  <script>
+    const musicButton = document.getElementById('music-button');
+    const musicIcon = document.getElementById('music-icon');
+    const iframe = document.getElementById('audio-player').contentWindow;
+
+    // Status musik
+    let isPlaying = sessionStorage.getItem('musicPlaying') === 'true';
+
+    // Update ikon awal
+    updateMusicIcon();
+
+    // Tombol untuk mengontrol musik
+    musicButton.addEventListener('click', () => {
+      if (isPlaying) {
+        iframe.postMessage({ action: 'pause' }, '*'); // Kirim perintah pause ke iframe
+        isPlaying = false;
+      } else {
+        iframe.postMessage({ action: 'play' }, '*'); // Kirim perintah play ke iframe
+        isPlaying = true;
+      }
+
+      // Simpan status di sessionStorage
+      sessionStorage.setItem('musicPlaying', isPlaying);
+
+      // Perbarui ikon
+      updateMusicIcon();
+    });
+
+    function updateMusicIcon() {
+      if (isPlaying) {
+        musicIcon.classList.remove('fa-volume-mute');
+        musicIcon.classList.add('fa-volume-up');
+      } else {
+        musicIcon.classList.remove('fa-volume-up');
+        musicIcon.classList.add('fa-volume-mute');
+      }
+    }
+  </script>
+</body>
+</html>

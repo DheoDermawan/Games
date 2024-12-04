@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kotak Saran</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #d6f3ff;
+      text-align: center;
+      padding: 20px;
+      color: #333;
+    }
+
+    .container {
+      margin: auto;
+      width: 90%;
+      max-width: 500px; /* Membatasi lebar container */
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      box-sizing: border-box; /* Agar padding tidak melebihi lebar container */
+    }
+
+    .header {
+      font-size: 26px;
+      margin-bottom: 10px;
+      font-weight: 600;
+      color: #00aaff;
+    }
+
+    .description {
+      font-size: 18px;
+      margin-bottom: 20px;
+      color: #555;
+    }
+
+    textarea {
+      width: 100%;
+      max-width: 100%; /* Menjaga kotak teks tidak melebihi lebar container */
+      height: 100px;
+      padding: 10px;
+      border: 1px solid #00aaff;
+      border-radius: 10px;
+      font-size: 16px;
+      resize: vertical; /* Hanya bisa di-resize secara vertikal */
+      box-sizing: border-box; /* Agar padding dan border terhitung dalam ukuran */
+    }
+
+    .btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #00aaff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .btn:hover {
+      background-color: #008ecc;
+    }
+
+    .menu-btn {
+      margin-top: 10px;
+      display: inline-block;
+      text-decoration: none;
+      color: #00aaff;
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    .kotak-saran {
+      margin-top: 30px;
+      background: #f1f1f1;
+      border-radius: 10px;
+      padding: 15px;
+      text-align: left;
+      max-height: 300px;
+      overflow-y: auto;
+      border: 1px solid #ccc;
+    }
+
+    .kotak-saran ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .kotak-saran li {
+      margin-bottom: 15px;
+      padding: 10px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .kotak-saran li span {
+      flex: 1;
+    }
+
+    .action-buttons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .action-buttons button {
+      padding: 5px 10px;
+      font-size: 14px;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .edit-btn {
+      background-color: #ffa500;
+    }
+
+    .edit-btn:hover {
+      background-color: #cc8400;
+    }
+
+    .delete-btn {
+      background-color: #ff4d4d;
+    }
+
+    .delete-btn:hover {
+      background-color: #cc0000;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">SARAN (Anonymous)</div>
+    <div class="description">Yuk berikan saran terbaikmu untuk aplikasi PANDORA ini!</div>
+    <textarea id="saran" placeholder="Tulis saran Anda di sini..."></textarea>
+    <button class="btn" onclick="kirimSaran()">Kirim Saran</button>
+    <a href="index.html" class="menu-btn">Kembali ke Menu</a>
+    <div class="kotak-saran" id="kotak-saran">
+      <h3>Daftar Saran:</h3>
+      <ul id="daftar-saran"></ul>
+    </div>
+  </div>
+  <iframe src="audio-player.html" style="display:none;" id="audio-player"></iframe> 
+  <script>
+    // Inisialisasi array untuk menyimpan saran
+    let saranList = [];
+
+    // Fungsi untuk mengambil data dari Local Storage saat halaman dimuat
+    function loadSaran() {
+      const storedSaran = localStorage.getItem('saranList');
+      if (storedSaran) {
+        saranList = JSON.parse(storedSaran); // Parse data JSON ke array
+      }
+      tampilkanSaran();
+    }
+
+    // Fungsi untuk menyimpan data ke Local Storage
+    function saveSaran() {
+      localStorage.setItem('saranList', JSON.stringify(saranList));
+    }
+
+    // Fungsi untuk mengirim saran
+    function kirimSaran() {
+      const saranInput = document.getElementById("saran");
+      const saran = saranInput.value.trim();
+
+      if (!saran) {
+        alert("Saran tidak boleh kosong!");
+        return;
+      }
+
+      // Tambahkan saran ke array
+      saranList.push(saran);
+
+      // Kosongkan input
+      saranInput.value = "";
+
+      // Simpan dan tampilkan saran
+      saveSaran();
+      tampilkanSaran();
+    }
+
+    // Fungsi untuk menampilkan semua saran
+    function tampilkanSaran() {
+      const daftarSaran = document.getElementById("daftar-saran");
+      daftarSaran.innerHTML = ""; // Kosongkan daftar sebelumnya
+
+      // Loop dan tampilkan semua saran
+      saranList.forEach((saran, index) => {
+        const listItem = document.createElement("li");
+
+        // Teks saran
+        const saranText = document.createElement("span");
+        saranText.textContent = `${index + 1}. ${saran}`;
+
+        // Tombol edit dan hapus
+        const actionButtons = document.createElement("div");
+        actionButtons.className = "action-buttons";
+
+        const editButton = document.createElement("button");
+        editButton.textContent = "Edit";
+        editButton.className = "edit-btn";
+        editButton.onclick = () => editSaran(index);
+
+        const deleteButton = document.createElement("button");
+        deleteButton.textContent = "Hapus";
+        deleteButton.className = "delete-btn";
+        deleteButton.onclick = () => hapusSaran(index);
+
+        actionButtons.appendChild(editButton);
+        actionButtons.appendChild(deleteButton);
+
+        listItem.appendChild(saranText);
+        listItem.appendChild(actionButtons);
+        daftarSaran.appendChild(listItem);
+      });
+    }
+
+    // Fungsi untuk mengedit saran
+    function editSaran(index) {
+      const saranBaru = prompt("Edit saran Anda:", saranList[index]);
+      if (saranBaru !== null && saranBaru.trim() !== "") {
+        saranList[index] = saranBaru.trim();
+        saveSaran(); // Simpan perubahan ke Local Storage
+        tampilkanSaran();
+      }
+    }
+
+    // Fungsi untuk menghapus saran
+    function hapusSaran(index) {
+      if (confirm("Apakah Anda yakin ingin menghapus saran ini?")) {
+        saranList.splice(index, 1);
+        saveSaran(); // Simpan perubahan ke Local Storage
+        tampilkanSaran();
+      }
+    }
+
+    // Panggil fungsi loadSaran saat halaman dimuat
+    window.onload = loadSaran;
+  </script>
+</body>
+</html>

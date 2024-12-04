@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="truth.css">
+  <title>Truth Game</title>
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">Truth</h1>
+    <p class="instruction">Pilihlah salah satu kartu!!</p>
+    <div class="card-container">
+      <div class="card" data-question="Hal apa yang dapat memperbaiki moodmu ketika sedih?">
+        <div class="card-icon">
+          <img src="icon-removebg-preview.png" alt="Mood Icon">
+        </div>
+        <div class="card-content">Klik untuk Membuka</div>
+      </div>
+      <div class="card" data-question="Apa impian rahasia yang tidak pernah kamu bagikan kepada orang lain?">
+        <div class="card-icon">
+          <img src="icon-removebg-preview.png" alt="Dream Icon">
+        </div>
+        <div class="card-content">Klik untuk Membuka</div>
+      </div>
+      <div class="card" data-question="Apa komentar terburuk yang pernah kamu terima dari seseorang?">
+        <div class="card-icon">
+          <img src="icon-removebg-preview.png" alt="Comment Icon">
+        </div>
+        <div class="card-content">Klik untuk Membuka</div>
+      </div>
+      <div class="card" data-question="Apa kebiasaanmu yang orang lain kenal banget?">
+        <div class="card-icon">
+          <img src="icon-removebg-preview.png" alt="Habit Icon">
+        </div>
+        <div class="card-content">Klik untuk Membuka</div>
+      </div>
+      <div class="card" data-question="Apa kelebihan dan kekuranganmu yang diketahui orang lain?">
+        <div class="card-icon">
+          <img src="icon-removebg-preview.png" alt="Strengths Icon">
+        </div>
+        <div class="card-content">Klik untuk Membuka</div>
+      </div>
+      <div class="card" data-question="Bagaimana kamu menggambarkan dirimu sendiri dalam satu kata dan kenapa?">
+        <div class="card-icon">
+          <img src="icon-removebg-preview.png" alt="Self Icon">
+        </div>
+        <div class="card-content">Klik untuk Membuka</div>
+      </div>
+    </div>
+    <button id="back-btn" class="back-btn">Back</button>
+  </div>
+
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <p id="question-text"></p>
+      <button id="close-btn">Tutup</button>
+    </div>
+  </div>
+
+  <script src="truth.js"></script>
+
+  <iframe src="audio-player.html" style="display:none;" id="audio-player"></iframe>
+</body>
+</html>

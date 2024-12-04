@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panduan Petak Johari</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Animasi untuk background */
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    body {
+      background: linear-gradient(135deg, #c3cfe2, #c5e1fa);
+      background-size: 200% 200%;
+      animation: gradientMove 10s ease infinite;
+    }
+  </style>
+</head>
+<body class="flex items-center justify-center min-h-screen">
+
+  <!-- Container utama -->
+  <div class="bg-white p-8 rounded-3xl shadow-xl max-w-lg w-full transition-all transform hover:scale-105 hover:shadow-2xl">
+    <!-- Header Petunjuk -->
+    <h1 class="text-3xl font-extrabold text-center text-teal-700 mb-8 tracking-wide">Panduan Petak Johari</h1>
+
+    <!-- Card 1 (Tombol Mulai) -->
+    <div class="flex items-center mb-6 hover:scale-105 transform transition-all">
+      <div class="bg-teal-200 p-3 rounded-full shadow-md hover:shadow-xl">
+        <!-- Ikon Play -->
+        <a href="menuutama.html">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-10 h-10 text-teal-600">
+            <path d="M8 5v14l11-7z"/>
+          </svg>
+        </a>
+      </div>
+      <p class="ml-6 text-lg text-gray-700"><strong><a href="informasi.html" class="text-teal-600 hover:underline">Tombol "Mulai"</a></strong> berfungsi untuk mengetahui informasi tentang petak Johari.</p>
+    </div>
+
+    <!-- Card 2 (Tombol Informasi) -->
+    <a href="informasi.html">
+      <div class="flex items-center mb-6 hover:scale-105 transform transition-all">
+        <div class="bg-blue-200 p-3 rounded-full shadow-md hover:shadow-xl">
+          <!-- Ikon Informasi -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-10 h-10 text-blue-600">
+            <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm.75 15h-1.5v-6h1.5zm0-8h-1.5V7h1.5z"/>
+          </svg>
+        </div>
+        <p class="ml-6 text-lg text-gray-700"><strong>Tombol "Informasi"</strong> berfungsi untuk melihat isi materi, profil pengembang, dan sumber referensi yang dipakai.</p>
+      </div>
+    </a>
+
+    <!-- Card 3 (Tombol Petunjuk) -->
+    <a href="petunjukgame.html">
+      <div class="flex items-center mb-8 hover:scale-105 transform transition-all">
+        <div class="bg-yellow-200 p-3 rounded-full shadow-md hover:shadow-xl">
+          <!-- Ikon Petunjuk -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-10 h-10 text-yellow-600">
+            <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 15h-2v-2h2zm1.31-5.1-.72.54A3.77 3.77 0 0 0 12 15h-1v-1a2.76 2.76 0 0 1 1.2-2.4l.72-.54a1.24 1.24 0 1 0-1.92-1.04h-2a3.25 3.25 0 1 1 5.21 2.6z"/>
+          </svg>
+        </div>
+        <p class="ml-6 text-lg text-gray-700"><strong>Tombol "Petunjuk"</strong> berfungsi untuk memberi petunjuk setiap tombol yang terdapat dalam aplikasi <strong>PANDORA</strong>.</p>
+      </div>
+    </a>
+
+    <!-- Ilustrasi -->
+    <div class="flex justify-center mb-8">
+      <img src="anak-removebg-preview.png" alt="Ilustrasi" class="w-40 rounded-lg shadow-2xl hover:scale-105 transform transition-all">
+    </div>
+
+    <!-- Tombol Back -->
+    <div class="flex justify-center">
+      <button class="bg-gray-600 text-white px-8 py-3 rounded-full text-lg shadow-md hover:bg-gray-700 transition transform hover:scale-105">
+        <a href="petunjukgame.html">Next</a>
+      </button>
+    </div>
+  </div>
+
+  <!-- Hidden iframe untuk audio player -->
+  <iframe src="audio-player.html" style="display:none;" id="audio-player"></iframe>
+</body>
+</html>

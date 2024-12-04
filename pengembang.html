@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informasi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Menambahkan font Pique My Interest */
+        @font-face {
+            font-family: 'Pique My Interest';
+            src: url('path-to-your-font/pique-my-interest.woff2') format('woff2'),
+                 url('path-to-your-font/pique-my-interest.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+    font-family: 'Pique My Interest', sans-serif;
+}
+
+        .card {
+            background-color: #ffffff;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .title {
+            font-weight: 700;
+            font-size: 1.75rem;
+            color: #2c3e50;
+        }
+
+        .description {
+            font-size: 1rem;
+            color: #7f8c8d;
+            line-height: 1.7;
+        }
+
+        .next-btn {
+            background-color: #3498db;
+            padding: 12px 24px;
+            color: white;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .next-btn:hover {
+            background-color: #2980b9;
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+
+<body class="bg-gradient-to-r from-blue-100 via-teal-200 to-green-300 min-h-screen flex flex-col items-center justify-center p-6">
+
+    <!-- Gantungan di atas -->
+    <div class="relative flex flex-col items-center mb-10">
+        <!-- Tali -->
+        <div class="absolute top-0 flex justify-center items-center">
+            <div class="w-1 bg-yellow-400 h-24"></div>
+        </div>
+
+        <!-- Bulatan Gantung -->
+        <div class="absolute -top-6 flex justify-center items-center">
+            <div class="bg-yellow-400 w-8 h-8 rounded-full flex items-center justify-center shadow-lg">
+                <div class="bg-blue-800 w-4 h-4 rounded-full"></div>
+            </div>
+        </div>
+
+        <!-- Judul -->
+        <h1 class="text-3xl font-extrabold text-blue-800 mb-10 z-10 tracking-wide">INFORMASI</h1>
+    </div>
+
+    <!-- Papan Informasi -->
+    <div class="relative w-full max-w-lg px-6 py-8 bg-white rounded-xl shadow-xl card">
+        <!-- Isi Papan -->
+        <h2 class="title text-center mb-6">Profil Pengembang</h2>
+        <ul class="description text-center space-y-2 mb-6">
+            <li>1. Delia Ayunda Maulia (13082200001)</li>
+            <li>2. Putri Nahwati (13082200013)</li>
+            <li>3. Alya Sabrina Mutias (13082200005)</li>
+            <li>4. Eti Fatmawati (13082200006)</li>
+            <li>5. Sayyidati Rizkiani (13082200024)</li>
+            <li>6. Azahra Ulfah (13082200009)</li>
+        </ul>
+        <p class="description text-center">Prodi: Bimbingan dan Konseling</p>
+    </div>
+
+    <!-- Ilustrasi Wanita -->
+    <div class="mt-8">
+        <img src="https://cdn-icons-png.flaticon.com/512/2334/2334737.png" alt="Ilustrasi Wanita" class="w-48 transition-transform transform hover:scale-110 duration-300">
+    </div>
+
+    <!-- Tombol NEXT -->
+    <a href="index.html">
+        <button class="mt-8 next-btn flex items-center space-x-3 transform transition-transform duration-300 hover:scale-105">
+            <span>Back To Menu</span>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+        </button>
+    </a>
+    <iframe src="audio-player.html" style="display:none;" id="audio-player"></iframe>
+</body>
+
+</html>

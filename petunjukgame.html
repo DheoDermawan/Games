@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petunjuk Game</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-r from-blue-300 to-blue-500 min-h-screen flex flex-col justify-center items-center py-10">
+    <!-- Container Utama -->
+    <div class="w-full max-w-4xl bg-white rounded-xl shadow-xl p-8 space-y-6">
+
+        <!-- Judul -->
+        <h1 class="text-3xl font-extrabold text-center text-blue-800 mb-6 drop-shadow-lg">PETUNJUK GAME</h1>
+
+        <!-- Papan Tulis -->
+        <div class="bg-gradient-to-r from-green-400 to-green-600 rounded-lg shadow-2xl w-full relative">
+            <!-- Teks dan Konten di Dalam Papan -->
+            <div class="p-8">
+                <!-- Ikon Controller -->
+                <div class="flex items-center mb-6">
+                    <!-- Membesarkan ukuran logo stik dan memastikan pas dalam lingkaran -->
+                    <div class="bg-white rounded-full p-4 shadow-lg w-20 h-20 flex items-center justify-center border-2 border-green-600">
+                        <!-- Ukuran gambar stik lebih besar dan lebih pas di dalam lingkaran -->
+                        <img src="download.webp" alt="Game Icon" class="w-30 h-30 object-contain" />
+                    </div>
+                    <h2 class="text-white text-2xl font-semibold ml-6">GAME</h2>
+                </div>
+                <p class="text-white text-base leading-relaxed">
+                    Tombol "Game" berfungsi untuk bermain sebuah permainan yang berisi pilihan truth atau dare. Cara bermainnya adalah dengan mengklik mulai, dan game akan berputar secara acak memilih antara truth atau dare, yang dimana truth berisi pertanyaan dan dare berisi tantangan.
+                </p>
+            </div>
+
+            <!-- Penghapus dan Kapur -->
+            <div class="absolute bottom-4 left-6 flex items-center space-x-2">
+                <div class="bg-transparent w-12 h-6"></div>
+                <div class="bg-transparent w-8 h-6"></div>
+            </div>
+        </div>
+
+        <!-- Ilustrasi Anak-Anak -->
+        <div class="mt-6">
+            <img src="ddd.png" alt="kids-playing" class="w-72 mx-auto transform hover:scale-110 transition duration-500 ease-in-out">
+        </div>
+
+        <!-- Tombol Kembali dengan link ke index.html -->
+        <a href="index.html">
+            <button class="mt-8 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-full shadow-md transition duration-300 ease-in-out transform hover:scale-105">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6 inline-block">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                </svg>
+                Back
+            </button>
+        </a>
+    </div>
+
+    <!-- Audio Player -->
+    <iframe src="audio-player.html" style="display:none;" id="audio-player"></iframe> 
+</body>
+</html>

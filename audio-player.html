@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Audio Player</title>
+</head>
+<body>
+  <audio id="background-music" loop>
+    <source src="Roa - Morning Sun 【Official】.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  <script>
+    const audio = document.getElementById("background-music");
+
+    // Ambil waktu playback dari LocalStorage
+    const savedTime = localStorage.getItem("audio-current-time");
+    if (savedTime) {
+      audio.currentTime = parseFloat(savedTime);
+    }
+
+    // Mulai memutar musik jika sebelumnya disetel untuk memutar
+    const isPlaying = localStorage.getItem("audio-playing") === "true";
+    if (isPlaying) {
+      audio.play();
+    }
+
+    // Simpan waktu playback setiap 1 detik
+    setInterval(() => {
+      localStorage.setItem("audio-current-time", audio.currentTime);
+    }, 1000);
+
+    // Dengarkan pesan dari iframe (index.html)
+    window.addEventListener("message", (event) => {
+      if (event.data.action === "play") {
+        audio.play();
+        localStorage.setItem("audio-playing", "true");
+      } else if (event.data.action === "pause") {
+        audio.pause();
+        localStorage.setItem("audio-playing", "false");
+      }
+    });
+  </script>
+</body>
+</html>
